@@ -1,6 +1,6 @@
 import os
 from nose.tools import eq_
-from pyexcel_xlsx import get_data
+from pyexcel_xlsxy import get_data
 
 
 def test_hidden_row():

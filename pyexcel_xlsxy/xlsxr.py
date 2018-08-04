@@ -1,5 +1,5 @@
 """
-    pyexcel_xlsx.xlsxr
+    pyexcel_xlsxy.xlsxr
     ~~~~~~~~~~~~~~~~~~~
 
     Read xlsx file format using openpyxl
@@ -186,9 +186,6 @@ class XLSXBook(BookReader):
         read_only_flag = True
         if self.skip_hidden_row_and_column:
             read_only_flag = False
-        data_only_flag = True
-        if self.detect_merged_cells:
-            data_only_flag = False
         self._native_book = openpyxl.load_workbook(
-            filename=file_alike_object, data_only=data_only_flag,
+            filename=file_alike_object, data_only=True,
             read_only=read_only_flag)

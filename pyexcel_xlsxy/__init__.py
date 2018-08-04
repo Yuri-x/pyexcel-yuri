@@ -1,5 +1,5 @@
 """
-    pyexcel_xlsx
+    pyexcel_xlsxy
     ~~~~~~~~~~~~~~~~~~~
 
     The lower level xlsx file format handler using openpyxl
@@ -19,7 +19,7 @@ IOPluginInfoChain(__name__).add_a_reader(
     stream_type='binary'
 ).add_a_writer(
     relative_plugin_class_path='xlsxw.XLSXWriter',
-    file_types=[__FILE_TYPE__, 'xlsm'],
+    file_types=[__FILE_TYPE__],
     stream_type='binary'
 )
 

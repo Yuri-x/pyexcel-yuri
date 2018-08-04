@@ -1,26 +1,8 @@
 ================================================================================
-pyexcel-xlsx - Let you focus on data, instead of xlsx format
+pyexcel-xlsxy - Let you focus on data, instead of xlsx format
 ================================================================================
 
-.. image:: https://raw.githubusercontent.com/pyexcel/pyexcel.github.io/master/images/patreon.png
-   :target: https://www.patreon.com/pyexcel
-
-.. image:: https://api.bountysource.com/badge/team?team_id=288537
-   :target: https://salt.bountysource.com/teams/chfw-pyexcel
-
-.. image:: https://travis-ci.org/pyexcel/pyexcel-xlsx.svg?branch=master
-   :target: http://travis-ci.org/pyexcel/pyexcel-xlsx
-
-.. image:: https://codecov.io/gh/pyexcel/pyexcel-xlsx/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/pyexcel/pyexcel-xlsx
-
-.. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
-   :target: https://gitter.im/pyexcel/Lobby
-
-.. image:: https://readthedocs.org/projects/pyexcel-xlsx/badge/?version=latest
-   :target: http://pyexcel-xlsx.readthedocs.org/en/latest/
-
-**pyexcel-xlsx** is a tiny wrapper library to read, manipulate and write data in xlsx and xlsm format using  `read_only` mode reader, `write_only` mode writer from openpyxl. You are likely to use it with `pyexcel <https://github.com/pyexcel/pyexcel>`__.
+**pyexcel-xlsxy** is a tiny wrapper library to read, manipulate and write data in xlsx and xlsm format using  `read_only` mode reader, `write_only` mode writer from Xlsxwriter. You are likely to use it with `pyexcel <https://github.com/pyexcel/pyexcel>`__.
 
 Please note:
 
@@ -38,37 +20,20 @@ Installation
 ================================================================================
 
 
-You can install pyexcel-xlsx via pip:
+You can install pyexcel-xlsxy via pip:
 
 .. code-block:: bash
 
-    $ pip install pyexcel-xlsx
+    $ pip install pyexcel-xlsxy
 
 
 or clone it and install it:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/pyexcel/pyexcel-xlsx.git
-    $ cd pyexcel-xlsx
+    $ git clone https://github.com/Yuri-x/pyexcel-xlsxy.git
+    $ cd pyexcel-xlsxy
     $ python setup.py install
-
-Support the project
-================================================================================
-
-If your company has embedded pyexcel and its components into a revenue generating
-product, please support me on `patreon <https://www.patreon.com/bePatron?u=5537627>`_
-or `bounty source <https://salt.bountysource.com/teams/chfw-pyexcel>`_ to maintain
-the project and develop it further.
-
-If you are an individual, you are welcome to support me too and for however long
-you feel like. As my backer, you will receive
-`early access to pyexcel related contents <https://www.patreon.com/pyexcel/posts>`_.
-
-And your issues will get prioritized if you would like to become my patreon as `pyexcel pro user`.
-
-With your financial support, I will be able to invest
-a little bit more time in coding, documentation and writing interesting posts.
 
 
 Usage
@@ -102,7 +67,7 @@ Here's the sample code to write a dictionary to an xlsx file:
 
 .. code-block:: python
 
-    >>> from pyexcel_xlsx import save_data
+    >>> from pyexcel_xlsxy import save_data
     >>> data = OrderedDict() # from collections import OrderedDict
     >>> data.update({"Sheet 1": [[1, 2, 3], [4, 5, 6]]})
     >>> data.update({"Sheet 2": [["row 1", "row 2", "row 3"]]})
@@ -116,7 +81,7 @@ Here's the sample code:
 
 .. code-block:: python
 
-    >>> from pyexcel_xlsx import get_data
+    >>> from pyexcel_xlsxy import get_data
     >>> data = get_data("your_file.xlsx")
     >>> import json
     >>> print(json.dumps(data))
@@ -130,7 +95,7 @@ Here's the sample code to write a dictionary to an xlsx file:
 
 .. code-block:: python
 
-    >>> from pyexcel_xlsx import save_data
+    >>> from pyexcel_xlsxy import save_data
     >>> data = OrderedDict()
     >>> data.update({"Sheet 1": [[1, 2, 3], [4, 5, 6]]})
     >>> data.update({"Sheet 2": [[7, 8, 9], [10, 11, 12]]})
