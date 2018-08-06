@@ -1,6 +1,6 @@
 import os
-from pyexcel_xlsxy import get_data
-from pyexcel_xlsxy.xlsxr import MergedCell
+from pyexcel_yuri import get_data
+from pyexcel_yuri.xlsxr import MergedCell
 from nose.tools import eq_
 from openpyxl.worksheet.cell_range import CellRange
 

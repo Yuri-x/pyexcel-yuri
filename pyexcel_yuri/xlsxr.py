@@ -1,5 +1,5 @@
 """
-    pyexcel_xlsxy.xlsxr
+    pyexcel_yuri.xlsxr
     ~~~~~~~~~~~~~~~~~~~
 
     Read xlsx file format using openpyxl

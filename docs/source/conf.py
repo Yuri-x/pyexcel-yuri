@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 DESCRIPTION = (
-    'A wrapper library to read, manipulate and write data in xlsx and xlsm ' +
-    'format' +
+    'A wrapper library to read, manipulate and write data' +
     ''
 )
 extensions = [
@@ -17,10 +16,10 @@ templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
 
-project = u'pyexcel-xlsxy'
+project = u'pyexcel-yuri'
 copyright = u'Yuri'
-version = '0.6.0'
-release = '0.6.0'
+version = '0.0.1'
+release = '0.0.1'
 exclude_patterns = []
 pygments_style = 'sphinx'
 html_theme = 'default'

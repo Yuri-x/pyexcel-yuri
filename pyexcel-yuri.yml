@@ -1,0 +1,12 @@
+overrides: "pyexcel.yaml"
+name: "pyexcel-yuri"
+nick_name: pyexcel-yuri
+version: 0.0.1
+current_version: 0.0.1
+release: 0.0.1
+file_type: xlsx
+dependencies:
+  - openpyxl>=2.5.0
+  - pyexcel-io>=0.5.3
+  - Xlsxwriter
+description: A wrapper library to read, manipulate and write data

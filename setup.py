@@ -5,17 +5,16 @@ import codecs
 from shutil import rmtree
 from setuptools import setup, find_packages, Command
 
-NAME = 'pyexcel-xlsxy'
+NAME = 'pyexcel-yuri'
 AUTHOR = 'Yuri'
-VERSION = '0.6.0'
+VERSION = '0.0.1'
 EMAIL = 'yuri@yuri-x.com'
 LICENSE = 'New BSD'
 DESCRIPTION = (
-    'A wrapper library to read, manipulate and write data in xlsx and xlsm' +
-    'format'
+    'A wrapper library to read, manipulate and write data format'
 )
-URL = 'https://github.com/Yuri-x/pyexcel-xlsxy'
-DOWNLOAD_URL = '%s/archive/0.6.0.tar.gz' % URL
+URL = 'https://github.com/Yuri-x/pyexcel-yuri'
+DOWNLOAD_URL = '%s/archive/0.0.1.tar.gz' % URL
 FILES = ['README.rst', 'CHANGELOG.rst']
 KEYWORDS = [
     'xlsx'
@@ -51,10 +50,6 @@ EXTRAS_REQUIRE = {
 # You do not need to read beyond this line
 PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
     sys.executable)
-GS_COMMAND = ('gs pyexcel-xlsx v0.6.0 ' +
-              "Find 0.6.0 in changelog for more details")
-NO_GS_MESSAGE = ('Automatic github release is disabled. ' +
-                 'Please install gease to enable it.')
 UPLOAD_FAILED_MSG = (
     'Upload failed. please run "%s" yourself.' % PUBLISH_COMMAND)
 HERE = os.path.abspath(os.path.dirname(__file__))
@@ -69,7 +64,7 @@ class PublishCommand(Command):
     @staticmethod
     def status(s):
         """Prints things in bold."""
-        print('\033[1m{0}\033[0m'.format(s))
+        print(s)
 
     def initialize_options(self):
         pass
@@ -82,16 +77,12 @@ class PublishCommand(Command):
             self.status('Removing previous builds...')
             rmtree(os.path.join(HERE, 'dist'))
             rmtree(os.path.join(HERE, 'build'))
-            rmtree(os.path.join(HERE, 'pyexcel_xlsxy.egg-info'))
+            rmtree(os.path.join(HERE, 'pyexcel_yuri.egg-info'))
         except OSError:
             pass
 
         self.status('Building Source and Wheel (universal) distribution...')
         run_status = True
-        if has_gease():
-            run_status = os.system(GS_COMMAND) == 0
-        else:
-            self.status(NO_GS_MESSAGE)
         if run_status:
             if os.system(PUBLISH_COMMAND) != 0:
                 self.status(UPLOAD_FAILED_MSG % PUBLISH_COMMAND)
@@ -102,19 +93,6 @@ class PublishCommand(Command):
 SETUP_COMMANDS.update({
     'publish': PublishCommand
 })
-
-
-def has_gease():
-    """
-    test if github release command is installed
-
-    visit http://github.com/moremoban/gease for more info
-    """
-    try:
-        import gease  # noqa
-        return True
-    except ImportError:
-        return False
 
 
 def read_files(*files):

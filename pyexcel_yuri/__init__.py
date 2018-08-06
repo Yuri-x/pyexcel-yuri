@@ -1,5 +1,5 @@
 """
-    pyexcel_xlsxy
+    pyexcel_yuri
     ~~~~~~~~~~~~~~~~~~~
 
     The lower level xlsx file format handler using openpyxl

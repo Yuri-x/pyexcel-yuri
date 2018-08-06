@@ -1,8 +1,8 @@
 ================================================================================
-pyexcel-xlsxy - Let you focus on data, instead of xlsx format
+pyexcel-yuri - Let you focus on data, instead of xlsx format
 ================================================================================
 
-**pyexcel-xlsxy** is a tiny wrapper library to read, manipulate and write data in xlsx and xlsm format using  `read_only` mode reader, `write_only` mode writer from Xlsxwriter. You are likely to use it with `pyexcel <https://github.com/pyexcel/pyexcel>`__.
+**pyexcel-yuri** is a tiny wrapper library to read, manipulate and write data in xlsx and xlsm format using  `read_only` mode reader, `write_only` mode writer from Xlsxwriter. You are likely to use it with `pyexcel <https://github.com/pyexcel/pyexcel>`__.
 
 Please note:
 
@@ -20,19 +20,19 @@ Installation
 ================================================================================
 
 
-You can install pyexcel-xlsxy via pip:
+You can install pyexcel-yuri via pip:
 
 .. code-block:: bash
 
-    $ pip install pyexcel-xlsxy
+    $ pip install pyexcel-yuri
 
 
 or clone it and install it:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/Yuri-x/pyexcel-xlsxy.git
-    $ cd pyexcel-xlsxy
+    $ git clone https://github.com/Yuri-x/pyexcel-yuri.git
+    $ cd pyexcel-yuri
     $ python setup.py install
 
 
