@@ -187,7 +187,7 @@ class XLSXBook(BookReader):
 
     def read_sheet(self, native_sheet):
         if self.skip_hidden_row_and_column or self.detect_merged_cells:
-            sheet = SlowSheet(native_sheet, **self._keywords)
+            sheet = SlowSheet(native_sheet, skip_hidden_row_and_column=self.skip_hidden_row_and_column, **self._keywords)
         else:
             sheet = FastSheet(native_sheet, **self._keywords)
         return {sheet.name: sheet.to_array()}
