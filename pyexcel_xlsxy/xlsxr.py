@@ -37,7 +37,8 @@ class FastSheet(SheetReader):
         a generator for the values in a row
         """
         for cell in row:
-            yield cell.value
+            value = cell.value.strip() if isinstance(cell.value, str) else cell.value
+            yield None if value == '' else value
 
 
 class MergedCell(object):

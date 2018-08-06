@@ -7,7 +7,7 @@ from setuptools import setup, find_packages, Command
 
 NAME = 'pyexcel-xlsxy'
 AUTHOR = 'Yuri'
-VERSION = '0.5.7'
+VERSION = '0.5.6'
 EMAIL = 'yuri@yuri-x.com'
 LICENSE = 'New BSD'
 DESCRIPTION = (
@@ -15,7 +15,7 @@ DESCRIPTION = (
     'format'
 )
 URL = 'https://github.com/Yuri-x/pyexcel-xlsxy'
-DOWNLOAD_URL = '%s/archive/0.5.7.tar.gz' % URL
+DOWNLOAD_URL = '%s/archive/0.5.6.tar.gz' % URL
 FILES = ['README.rst', 'CHANGELOG.rst']
 KEYWORDS = [
     'xlsx'
@@ -51,8 +51,8 @@ EXTRAS_REQUIRE = {
 # You do not need to read beyond this line
 PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
     sys.executable)
-GS_COMMAND = ('gs pyexcel-xlsx v0.5.7 ' +
-              "Find 0.5.7 in changelog for more details")
+GS_COMMAND = ('gs pyexcel-xlsx v0.5.6 ' +
+              "Find 0.5.6 in changelog for more details")
 NO_GS_MESSAGE = ('Automatic github release is disabled. ' +
                  'Please install gease to enable it.')
 UPLOAD_FAILED_MSG = (
