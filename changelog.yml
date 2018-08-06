@@ -4,6 +4,12 @@ releases:
 - changes:
   - action: Added
     details:
+    - Fix skip hidden cells
+  date: 06.08.2018
+  version: 0.6.0
+- changes:
+  - action: Added
+    details:
     - '`#24`, remove deprecated warning from merged_cell_ranges and get_sheet_by_name'
     - Merge to Xlsxwrtier
   date: 06.08.2018

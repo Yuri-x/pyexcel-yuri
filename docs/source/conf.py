@@ -18,9 +18,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 project = u'pyexcel-xlsxy'
-copyright = u'2015-2018 Onni Software Ltd.'
-version = '0.5.6'
-release = '0.5.6'
+copyright = u'Yuri'
+version = '0.6.0'
+release = '0.6.0'
 exclude_patterns = []
 pygments_style = 'sphinx'
 html_theme = 'default'

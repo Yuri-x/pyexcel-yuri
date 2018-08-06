@@ -1,9 +1,9 @@
 overrides: "pyexcel.yaml"
 name: "pyexcel-xlsxy"
 nick_name: xlsxy
-version: 0.5.6
-current_version: 0.5.6
-release: 0.5.6
+version: 0.6.0
+current_version: 0.6.0
+release: 0.6.0
 file_type: xlsx
 dependencies:
   - openpyxl>=2.5.0
