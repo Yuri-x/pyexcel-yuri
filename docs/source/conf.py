@@ -17,7 +17,7 @@ templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
 
-project = u'pyexcel-xlsx'
+project = u'pyexcel-xlsxy'
 copyright = u'2015-2018 Onni Software Ltd.'
 version = '0.5.6'
 release = '0.5.6'

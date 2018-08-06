@@ -37,8 +37,7 @@ class FastSheet(SheetReader):
         a generator for the values in a row
         """
         for cell in row:
-            value = cell.value.strip() if isinstance(cell.value, str) else cell.value
-            yield None if value == '' else value
+            yield cell.value
 
 
 class MergedCell(object):
@@ -70,6 +69,7 @@ class SlowSheet(FastSheet):
         self.max_column = 0
         self.__sheet_max_row = sheet.max_row
         self.__sheet_max_column = sheet.max_column
+        self.skip_hidden_row_and_column = keywords.get('skip_hidden_row_and_column', False)
         for ranges in sheet.merged_cells.ranges[:]:
             merged_cells = MergedCell(ranges)
             merged_cells.register_cells(self.__merged_cells)
@@ -83,7 +83,10 @@ class SlowSheet(FastSheet):
         skip hidden rows
         """
         for row_index, row in enumerate(self._native_sheet.rows, 1):
-            if self._native_sheet.row_dimensions[row_index].hidden is False:
+            if self.skip_hidden_row_and_column:
+                if self._native_sheet.row_dimensions[row_index].hidden is False:
+                    yield (row, row_index)
+            else:
                 yield (row, row_index)
         if self.max_row > self.__sheet_max_row:
             for i in range(self.__sheet_max_row, self.max_row):
@@ -97,7 +100,17 @@ class SlowSheet(FastSheet):
         row, row_index = row_struct
         for column_index, cell in enumerate(row, 1):
             letter = openpyxl.utils.get_column_letter(column_index)
-            if self._native_sheet.column_dimensions[letter].hidden is False:
+            if self.skip_hidden_row_and_column:
+                if self._native_sheet.column_dimensions[letter].hidden is False:
+                    if cell:
+                        value = cell.value
+                    else:
+                        value = ''
+                    if value is None:
+                        value = ''
+                    value = self._merged_cells(row_index, column_index, value)
+                    yield value
+            else:
                 if cell:
                     value = cell.value
                 else:
@@ -108,7 +121,7 @@ class SlowSheet(FastSheet):
                 yield value
         if self.max_column > self.__sheet_max_column:
             for i in range(self.__sheet_max_column, self.max_column):
-                value = self._merged_cells(row_index, i+1, '')
+                value = self._merged_cells(row_index, i + 1, '')
                 yield value
 
     def _merged_cells(self, row, column, value):
