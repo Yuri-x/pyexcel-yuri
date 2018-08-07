@@ -40,7 +40,7 @@ INSTALL_REQUIRES = [
     'openpyxl>=2.5.0',
     'pyexcel-io>=0.5.3',
     'Xlsxwriter',
-    'pandas'
+    'pandas>=0.23.4'
 ]
 SETUP_COMMANDS = {}
 

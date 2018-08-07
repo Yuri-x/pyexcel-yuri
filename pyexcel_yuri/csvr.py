@@ -65,5 +65,15 @@ class CSVBook(BookReader):
     def close(self):
         self._native_book = None
 
-    def _load_the_file(self, file_alike_object, **kwargs):
-        self._native_book = [pandas.read_csv(file_alike_object, dtype=str, header=None, sep='|', error_bad_lines=False)]
+    @staticmethod
+    def filter_kwargs(keywords):
+        return {
+            'sep': keywords.get('delimiter', ','),
+            'error_bad_lines': keywords.get('skip_bad_lines', True),
+            'encoding': keywords.get('encoding', 'utf-8'),
+            'memory_map': keywords.get('memory_map', False),
+            'compression': keywords.get('compression', 'infer')
+        }
+
+    def _load_the_file(self, file_alike_object, **keywords):
+        self._native_book = [pandas.read_csv(file_alike_object, dtype=str, header=None, **self.filter_kwargs(keywords))]

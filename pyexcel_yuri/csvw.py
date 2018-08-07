@@ -51,11 +51,19 @@ class CSVWriter(BookWriter):
         self._native_book[name] = []
         return CSVSheetWriter(self._native_book, self._native_book[name], name)
 
+    @staticmethod
+    def filter_kwargs(keywords):
+        return {
+            'sep': keywords.get('delimiter', ','),
+            'encoding': keywords.get('encoding', 'utf-8'),
+            'compression': keywords.get('compression')
+        }
+
     def close(self):
         """
         This call actually save the file
         """
         for name, sheet in self._native_book.items():
             pd = pandas.DataFrame(sheet)
-            pd.to_csv(self.file_name, header=None, index=False)
+            pd.to_csv(self.file_name, header=None, index=False, **self.filter_kwargs(self._keywords))
         self._native_book = None
