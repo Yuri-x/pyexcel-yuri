@@ -23,19 +23,11 @@ IOPluginInfoChain(__name__).add_a_reader(
     stream_type='binary'
 ).add_a_reader(
     relative_plugin_class_path='csvr.CSVBook',
-    file_types=['csv', 'txt', 'tsv'],
-    stream_type='text'
-).add_a_reader(
-    relative_plugin_class_path='csvr.CSVBook',
-    file_types=['gz', 'bz2', 'zip', 'xz'],
+    file_types=['csv', 'tsv', 'txt', 'gz', 'bz2', 'zip', 'xz'],
     stream_type='binary'
 ).add_a_writer(
     relative_plugin_class_path='csvw.CSVWriter',
-    file_types=['csv', 'txt', 'tsv'],
-    stream_type='text'
-).add_a_writer(
-    relative_plugin_class_path='csvw.CSVWriter',
-    file_types=['gz', 'bz2', 'zip', 'xz'],
+    file_types=['csv', 'txt', 'tsv', 'gz', 'bz2', 'zip', 'xz'],
     stream_type='binary'
 )
 
