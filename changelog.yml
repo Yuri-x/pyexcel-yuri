@@ -2,6 +2,12 @@ name: pyexcel-xlsx
 organisation: pyexcel
 releases:
 - changes:
+  - action: Updated
+    details:
+    - Fix stream type
+  date: 07.08.2018
+  version: 0.0.2
+- changes:
   - action: Added
     details:
     - Init commit

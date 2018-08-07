@@ -7,14 +7,14 @@ from setuptools import setup, find_packages, Command
 
 NAME = 'pyexcel-yuri'
 AUTHOR = 'Yuri'
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 EMAIL = 'yuri@yuri-x.com'
 LICENSE = 'New BSD'
 DESCRIPTION = (
     'A wrapper library to read, manipulate and write data format'
 )
 URL = 'https://github.com/Yuri-x/pyexcel-yuri'
-DOWNLOAD_URL = '%s/archive/0.0.1.tar.gz' % URL
+DOWNLOAD_URL = '%s/archive/0.0.2.tar.gz' % URL
 FILES = ['README.rst', 'CHANGELOG.rst']
 KEYWORDS = [
     'xlsx'

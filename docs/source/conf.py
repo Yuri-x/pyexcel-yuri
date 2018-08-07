@@ -18,8 +18,8 @@ master_doc = 'index'
 
 project = u'pyexcel-yuri'
 copyright = u'Yuri'
-version = '0.0.1'
-release = '0.0.1'
+version = '0.0.2'
+release = '0.0.2'
 exclude_patterns = []
 pygments_style = 'sphinx'
 html_theme = 'default'
