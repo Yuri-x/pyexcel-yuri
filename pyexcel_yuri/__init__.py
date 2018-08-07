@@ -21,6 +21,14 @@ IOPluginInfoChain(__name__).add_a_reader(
     relative_plugin_class_path='xlsxw.XLSXWriter',
     file_types=[__FILE_TYPE__],
     stream_type='binary'
+).add_a_reader(
+    relative_plugin_class_path='csvr.CSVBook',
+    file_types=['csv', 'txt', 'tsv'],
+    stream_type='text'
+).add_a_writer(
+    relative_plugin_class_path='csvw.CSVWriter',
+    file_types=['csv', 'txt', 'tsv'],
+    stream_type='text'
 )
 
 

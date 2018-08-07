@@ -39,7 +39,8 @@ CLASSIFIERS = [
 INSTALL_REQUIRES = [
     'openpyxl>=2.5.0',
     'pyexcel-io>=0.5.3',
-    'Xlsxwriter'
+    'Xlsxwriter',
+    'pandas'
 ]
 SETUP_COMMANDS = {}
 

@@ -1,5 +1,5 @@
 """
-    pyexcel_xlsx.xlsxw
+    pyexcel_yuri.xlsxw
     ~~~~~~~~~~~~~~~~~~~
 
     The lower level xlsx file format writer using xlsxwriter
