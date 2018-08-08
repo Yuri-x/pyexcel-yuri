@@ -198,7 +198,7 @@ class XLSXBook(BookReader):
 
     def _load_the_excel_file(self, file_alike_object):
         read_only_flag = True
-        if self.skip_hidden_row_and_column:
+        if self.skip_hidden_row_and_column or self.detect_merged_cells:
             read_only_flag = False
         self._native_book = openpyxl.load_workbook(
             filename=file_alike_object, data_only=True,

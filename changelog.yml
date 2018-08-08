@@ -4,6 +4,12 @@ releases:
 - changes:
   - action: Updated
     details:
+    - Fix merged cell
+  date: 08.08.2018
+  version: 0.0.3
+- changes:
+  - action: Updated
+    details:
     - Fix stream type
   date: 07.08.2018
   version: 0.0.2
